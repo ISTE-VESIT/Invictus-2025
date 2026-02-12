@@ -1765,12 +1765,6 @@ body::after {
     transform: rotate(360deg);
     opacity: 0.25;
   }
-
-  padding: 2rem;
-  margin-left: 50px;
-  /* Shift card to the right to avoid dot overlap */
-  padding-left: 3rem;
-  /* Extra padding on left for better spacing */
 }
 
 .milestone-card.day-card h3 {
@@ -2470,4 +2464,514 @@ body::after {
 
 .footer-socials a:hover::before {
   width: 100%;
+}
+
+/* --- HAMBURGER MENU --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- SOCIAL LINKS IN CONTACT SECTION --- */
+.socials a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  text-shadow: 0 0 10px var(--color-accent-blue);
+  color: #fff;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN — COMPREHENSIVE
+   ========================================== */
+
+/* --- TABLET & SMALL DESKTOP (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .tracks-content {
+    gap: 1rem;
+  }
+
+  .tracks-features-left,
+  .tracks-features-right {
+    max-width: 220px;
+  }
+
+  .tracks-img-container {
+    width: 50vw;
+    height: 50vh;
+  }
+
+  .milestone-card {
+    width: 55%;
+  }
+
+  .prize-card.spirit-leaf {
+    min-width: 220px;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .about-container {
+    padding: 3rem 2rem !important;
+  }
+}
+
+/* --- TABLET PORTRAIT & MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+
+  /* Navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 5, 10, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .top-nav {
+    padding: 1rem 1.5rem;
+  }
+
+  /* Side Nav */
+  .side-nav {
+    display: none !important;
+  }
+
+  /* Hero */
+  .hero .content {
+    padding-bottom: 15vh;
+  }
+
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 0.85rem;
+  }
+
+  /* About Section */
+  .about-container {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .section-title {
+    font-size: 2rem !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .org-name {
+    font-size: 1.1rem;
+  }
+
+  .logo-circle-wrap {
+    transform: scale(0.8);
+  }
+
+  /* Tracks */
+  .tracks-main-title {
+    font-size: clamp(2.5rem, 12vw, 6rem);
+  }
+
+  /* FAQ */
+  .faq-trigger-img {
+    width: 180px;
+  }
+
+  .faq-question h4 {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.85rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .click-hint {
+    font-size: 0.75rem;
+  }
+
+  /* Prize Pool */
+  .prizes-container {
+    gap: 1.5rem;
+  }
+
+  .biolume-text p:first-child {
+    min-width: auto;
+    font-size: 1.1rem;
+  }
+
+  .biolume-text p:last-child {
+    font-size: 0.9rem;
+  }
+
+  .tab-btn {
+    padding: 10px 18px;
+    min-width: 110px;
+    font-size: 0.85rem;
+  }
+
+  /* Contact */
+  .section.contact {
+    text-align: center !important;
+  }
+
+  .section.contact .content-wrapper {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .section.contact h2 {
+    text-align: center !important;
+  }
+
+  .section.contact p {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-info {
+    font-size: 1rem;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  /* Join */
+  .section.join {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .section.join .content {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .section.join .title,
+  .section.join .subtitle {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  /* Join Section */
+  .join .title {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .join .subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  /* Footer */
+  .footer-socials {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .site-footer {
+    padding: 2rem 1rem;
+  }
+
+  /* General Section Padding */
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .content-wrapper {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Typography */
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* --- SMALL MOBILE (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+  /* Navigation */
+  .top-nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .top-nav .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  /* Hero */
+  .hero .content {
+    padding-bottom: 12vh;
+  }
+
+  .cta-btn {
+    padding: 10px 22px;
+    font-size: 0.8rem;
+  }
+
+  /* About */
+  .about-container {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .section-title {
+    font-size: 1.6rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .org-name {
+    font-size: 0.95rem;
+  }
+
+  .desc-text {
+    font-size: 0.9rem;
+  }
+
+  .core-values {
+    gap: 0.5rem;
+  }
+
+  .value-item {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .logo-circle-wrap {
+    transform: scale(0.65);
+  }
+
+  /* Tracks */
+  .tracks-main-title {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .tracks-masked-container h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  #tracks-masked-content h3 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
+
+  #tracks-masked-content>p {
+    font-size: 1rem;
+  }
+
+  .track-detail-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .track-detail-card h4 {
+    font-size: 1.1rem;
+  }
+
+  /* Timeline */
+  .timeline-header-frame {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .milestone-card {
+    padding: 1rem 1.2rem;
+    border-radius: 15px;
+  }
+
+  .milestone-card .time {
+    font-size: 1rem;
+  }
+
+  .milestone-card .event-name {
+    font-size: 1.1rem;
+  }
+
+  .milestone-card .event-desc {
+    font-size: 0.8rem;
+  }
+
+  .milestone-card.day-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .day-badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .day-date {
+    font-size: 1.2rem;
+  }
+
+  /* FAQ */
+  .faq-trigger-img {
+    width: 140px;
+  }
+
+  .faq-question {
+    padding: 1rem;
+  }
+
+  .faq-question h4 {
+    font-size: 0.85rem;
+  }
+
+  .toggle-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Prize Pool */
+  .pandora-title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+
+  .prize-card.spirit-leaf {
+    min-width: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: 30% 30% 15% 15% / 60% 60% 20% 20%;
+  }
+
+  .prize-card .amount {
+    font-size: 2rem;
+  }
+
+  .prize-card .rank {
+    font-size: 0.9rem;
+  }
+
+  .track-label {
+    font-size: 1.2rem;
+  }
+
+  .perk {
+    font-size: 0.8rem;
+  }
+
+  .biolume-text p:first-child {
+    font-size: 0.95rem;
+  }
+
+  .biolume-text p:last-child {
+    font-size: 0.8rem;
+  }
+
+  /* Contact */
+  .contact h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+  /* Join */
+  .join .title {
+    font-size: clamp(1.5rem, 7vw, 3rem);
+  }
+
+  .join .subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+
+  /* Footer */
+  .copyright {
+    font-size: 0.75rem;
+  }
+
+  .organizer {
+    font-size: 0.85rem;
+  }
+
+  .footer-socials a {
+    font-size: 0.8rem;
+  }
+
+  /* General */
+  .section {
+    padding: 3rem 0.75rem;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 5vw, 2.5rem);
+  }
 }
