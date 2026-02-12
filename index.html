@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avatar: The World of Pandora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./src/style.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Top Navigation (Key Sections) -->
+  <nav class="top-nav">
+    <div class="logo">INVICTUS</div>
+    <div class="nav-links">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#tracks" class="nav-link">Tracks</a>
+      <a href="#timeline" class="nav-link">Timeline</a>
+      <a href="#prizepool" class="nav-link">Prizes</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#join" class="nav-link cta">Register</a>
+    </div>
+  </nav>
+
+  <!-- Side Navigation (All Sections) -->
+  <div class="side-nav">
+    <a href="#hero" class="dot" data-label="Home"></a>
+    <a href="#about" class="dot" data-label="About Us"></a>
+    <a href="#tracks" class="dot" data-label="Tracks"></a>
+    <a href="#timeline" class="dot" data-label="Timeline"></a>
+    <a href="#faq" class="dot" data-label="FAQ"></a>
+    <a href="#prizepool" class="dot" data-label="Prize Pool"></a>
+    <a href="#contact" class="dot" data-label="Contact"></a>
+    <a href="#join" class="dot" data-label="Join"></a>
+  </div>
+
+  <canvas id="webgl"></canvas>
+
+  <main>
+    <main>
+      <!-- 1. HERO - INVICTUS -->
+      <section class="section hero" id="hero">
+        <img src="/Invictus_header.png" alt="INVICTUS" class="hero-logo">
+        <div class="content center">
+          <button class="cta-btn" id="enter-btn">ENTER THE ARENA</button>
+        </div>
+
+      </section>
+
+      <!-- 2. ABOUT US (formerly ARENA) -->
+      <section class="section arena about" id="about">
+        <div class="pandora-bg-fx">
+          <div class="glow-orb"></div>
+          <div class="glow-orb"></div>
+        </div>
+
+        <div class="content-wrapper about-container">
+          <div class="holo-header">
+            <span class="status-blink"></span>
+            <span class="coord-text">LAT: 25.13° S | LONG: 110.24° E</span>
+            <div class="header-line"></div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-visual">
+              <div class="logo-circle-wrap">
+                <img src="/iste_logo.jpg" alt="ISTE" class="iste-logo-main">
+                <div class="rotating-ring"></div>
+                <div class="rotating-ring-inner"></div>
+              </div>
+            </div>
+
+            <div class="about-text-content">
+              <h2 class="section-title">PROJECT INVICTUS</h2>
+              <h3 class="org-name">ISTE Students’ Chapter VESIT</h3>
+
+              <div class="bio-scan-line"></div>
+
+              <p class="desc-text">
+                <span class="drop-cap">I</span>nvictus is a premier hackathon organized by <strong>ISTE-VESIT</strong>.
+                It is a catalyst for innovation where students solve high-impact challenges in a high-pressure,
+                competitive environment.
+              </p>
+
+              <div class="core-values">
+                <div class="value-item"><span class="icon">✦</span> COLLABORATION</div>
+                <div class="value-item"><span class="icon">✦</span> CREATIVITY</div>
+                <div class="value-item"><span class="icon">✦</span> INNOVATION</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="holo-footer">
+            <div class="footer-line"></div>
+            <span class="system-msg">NEURAL LINK STABLE // DATA STREAM ACTIVE</span>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 3. TRACKS (formerly PANDORA) -->
+      <section class="section pandora tracks" id="tracks">
+        <div class="tracks-container">
+          <h2 class="tracks-main-title will-fade">THE TRACKS</h2>
+
+          <div class="tracks-content">
+            <ul class="tracks-features-left will-fade">
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Cutting-edge challenges</p>
+              </li>
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Real-world problem solving</p>
+              </li>
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Industry-relevant solutions</p>
+              </li>
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Expert mentorship</p>
+              </li>
+            </ul>
+
+            <div class="tracks-img-container">
+              <img src="/track.png" alt="tracks" class="masked-img-tracks" />
+            </div>
+
+            <ul class="tracks-features-right will-fade">
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Multiple domains</p>
+              </li>
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Innovation-driven</p>
+              </li>
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Collaborative environment</p>
+              </li>
+              <li>
+                <span class="track-icon">✦</span>
+                <p>Impactful projects</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tracks-masked-container">
+            <h2 class="will-fade">Choose Your Battlefield</h2>
+            <div id="tracks-masked-content">
+              <h3>Senior Track • Junior Track</h3>
+              <p>Pick your track based on your year. Compete. Conquer.</p>
+              <div class="tracks-details">
+                <div class="track-detail-card">
+                  <h4>Senior Track</h4>
+                  <p>TEs • BEs • MCA</p>
+                </div>
+                <div class="track-detail-card">
+                  <h4>Junior Track</h4>
+                  <p>FEs • SEs</p>
+                </div>
+              </div>
+              <!-- Countdown Timer for Problem Statement Release -->
+              <div class="countdown-container">
+                <div class="countdown-title">PROBLEM STATEMENTS RELEASE IN</div>
+                <div class="countdown-timer" id="countdown">
+                  <div class="time-unit">
+                    <div class="time-value" id="days">00</div>
+                    <div class="time-label">Days</div>
+                  </div>
+                  <div class="time-separator">:</div>
+                  <div class="time-unit">
+                    <div class="time-value" id="hours">00</div>
+                    <div class="time-label">Hours</div>
+                  </div>
+                  <div class="time-separator">:</div>
+                  <div class="time-unit">
+                    <div class="time-value" id="minutes">00</div>
+                    <div class="time-label">Minutes</div>
+                  </div>
+                  <div class="time-separator">:</div>
+                  <div class="time-unit">
+                    <div class="time-value" id="seconds">00</div>
+                    <div class="time-label">Seconds</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TIMELINE (formerly FOREST) -->
+      <section class="section forest timeline-section" id="timeline">
+        <div class="content-wrapper center timeline-wrapper">
+
+          <!-- Creative Header Frame -->
+          <div class="timeline-header-frame">
+            <div class="frame-corner top-left"></div>
+            <div class="frame-corner top-right"></div>
+            <div class="frame-corner bottom-left"></div>
+            <div class="frame-corner bottom-right"></div>
+
+            <div class="header-content">
+              <div class="header-icon">◈</div>
+              <h2>EVENT TIMELINE</h2>
+              <div class="header-divider"></div>
+              <p class="timeline-subtitle">48 Hours of Innovation</p>
+              <div class="header-particles">
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vertical-timeline">
+            <!-- Timeline Connector Line -->
+            <div class="timeline-line"></div>
+
+            <!-- Day 1 -->
+            <div class="timeline-milestone day-marker">
+              <div class="milestone-dot day-dot"></div>
+              <div class="milestone-card day-card">
+                <div class="day-badge">DAY 1</div>
+                <div class="day-date">February 14th</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone left">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">03:00 PM</div>
+                <div class="event-name">Opening Ceremony</div>
+                <div class="event-desc">Kickoff & team introductions</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone right">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">03:30 PM</div>
+                <div class="event-name">Hacking Begins + Assignment 0</div>
+                <div class="event-desc">Start building & first challenge drops</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone left">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">05:00 PM</div>
+                <div class="event-name">Assignment 0 Deadline</div>
+                <div class="event-desc">Submit your first task</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone right">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">05:30 PM - 07:30 PM</div>
+                <div class="event-name">Helpline Meet 1</div>
+                <div class="event-desc">Get support from mentors</div>
+              </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="timeline-milestone day-marker">
+              <div class="milestone-dot day-dot"></div>
+              <div class="milestone-card day-card">
+                <div class="day-badge">DAY 2</div>
+                <div class="day-date">February 15th</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone left">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">03:30 AM</div>
+                <div class="event-name">Assignment 1 Release</div>
+                <div class="event-desc">Second challenge drops (midnight coding!)</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone right">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">05:00 AM</div>
+                <div class="event-name">Assignment 1 Deadline</div>
+                <div class="event-desc">Submit your second task</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone left">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">05:30 AM - 07:30 AM</div>
+                <div class="event-name">Helpline Meet 2</div>
+                <div class="event-desc">Final mentor support session</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone right">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">11:00 AM - 01:00 PM</div>
+                <div class="event-name">Final Submission Window</div>
+                <div class="event-desc">Video & article submission</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone left">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">01:00 PM</div>
+                <div class="event-name">Code Freeze</div>
+                <div class="event-desc">No commits accepted after this time</div>
+              </div>
+            </div>
+
+            <div class="timeline-milestone right">
+              <div class="milestone-dot"></div>
+              <div class="milestone-card">
+                <div class="time">01:30 PM - 03:00 PM</div>
+                <div class="event-name">Final Pitching & Awards</div>
+                <div class="event-desc">Present to judges & win!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FAQ (formerly WATER) -->
+      <section class="section water faq" id="faq">
+        <div class="content-wrapper center faq-wrapper">
+          <h2>FAQ</h2>
+
+          <!-- Interactive Trigger -->
+          <div class="faq-trigger-container">
+            <img src="/avatar_image.png" alt="Click to open FAQ" class="faq-trigger-img" id="faqTrigger">
+            <p class="click-hint">CLICK TO ACCESS DATABASE</p>
+          </div>
+
+          <!-- Hidden Content -->
+          <div class="faq-content-wrapper" id="faqContent">
+            <div class="faq-container">
+              <!-- Q1: Who can participate? -->
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Who can enter the arena?</h4>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Exclusively for <strong>VESIT students</strong>! Whether you're a fresher or a final year veteran,
+                    the battlefield is open for you to prove your mettle.</p>
+                </div>
+              </div>
+
+              <!-- Q2: Team Size -->
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>What is the squad size?</h4>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Forge an alliance of <strong>2 to 4 members</strong>. Gather your strongest allies and prepare for
+                    glory!</p>
+                </div>
+              </div>
+
+              <!-- Q3: Registration Fee -->
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Is there a cost to join?</h4>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Victory costs nothing but effort! <strong>Registration is completely free</strong>. Bring your
+                    ideas, not your wallet.</p>
+                </div>
+              </div>
+
+              <!-- Q4: Mode of Event -->
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Where will the battle take place?</h4>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>The entire event is <strong>Online</strong>. Code from your command center and deploy your
+                    solutions from anywhere!</p>
+                </div>
+              </div>
+
+              <!-- Q5: How to Register -->
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>How do I secure my spot?</h4>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Ready to deploy? Simply click the <strong>"Register"</strong> button at the top of the page or
+                    scroll down to "Join the Battle". Don't wait!</p>
+                </div>
+              </div>
+
+              <!-- Q6: Support / Doubt Solving -->
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Will we have support during the mission?</h4>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>Fear not! The elite <strong>ISTE Team</strong> will be deployed to assist you 24/7. We're here to
+                    solve doubts and ensure your journey is smooth.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. PRIZE POOL (formerly FIRE) -->
+      <section class="section prizepool" id="prizepool">
+        <div class="content-wrapper center">
+          <h2 class="pandora-title">THE BOUNTY OF EYWA</h2>
+
+          <div class="tab-switch-container" id="prize-tab-container">
+            <button class="tab-btn active" onclick="switchTrack(event, 'junior')">Junior Track</button>
+            <button class="tab-btn" onclick="switchTrack(event, 'senior')">Senior Track</button>
+          </div>
+
+          <div class="track-group active-track" id="junior-track">
+            <h3 class="track-label">Junior TRACK <span>(FEs, SEs)</span></h3>
+            <div class="prizes-container">
+              <div class="prize-card spirit-leaf silver">
+                <div class="rank">Runner-up</div>
+                <div class="amount">₹10,000</div>
+              </div>
+              <div class="prize-card spirit-leaf gold">
+                <div class="glow-orb"></div>
+                <div class="rank">Winner</div>
+                <div class="amount">₹12,000</div>
+              </div>
+              <div class="prize-card spirit-leaf bronze">
+                <div class="rank">2nd Runner-up</div>
+                <div class="amount">₹8,000</div>
+              </div>
+            </div>
+            <h4 class="perk">*Also includes Internship Opportunities + InterviewBuddy Vouchers</h4>
+          </div>
+
+          <div class="track-group" id="senior-track">
+            <h3 class="track-label">SENIOR TRACK <span>(TEs, BEs, MCA)</span></h3>
+            <div class="prizes-container">
+              <div class="prize-card spirit-leaf gold">
+                <div class="glow-orb"></div>
+                <div class="rank">1st Place</div>
+                <div class="amount">₹12,000</div>
+                <p class="perk">+ Elite AI Interview Package</p>
+              </div>
+              <div class="prize-card spirit-leaf silver">
+                <div class="rank">2nd Place</div>
+                <div class="amount">₹8,000</div>
+                <p class="perk">+ Professional Mastery Kit</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="consolation biolume-text">
+            <p>🏆 Expert Level Interview Coupons for All Participants 🏆 </p>
+            <p>Digital Soul-Link Certificates & Swag Kits Included</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CONTACT (formerly BALANCE) -->
+      <section class="section balance contact" id="contact">
+        <div class="content-wrapper center">
+          <h2>CONTACT US</h2>
+          <p>Have questions? Reach out to us.</p>
+          <div class="contact-info">
+            <p><strong>Email:</strong> iste.vesit@ves.ac.in</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <div class="socials">
+              <span>Instagram</span> | <span>LinkedIn</span> | <span>Twitter</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. JOIN -->
+      <section class="section join" id="join">
+        <div class="content center">
+          <h2 class="subtitle">ARE YOU READY?</h2>
+          <h1 class="title">JOIN THE BATTLE</h1>
+          <button class="cta-btn primary">REGISTER NOW</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="copyright">© 2026 INVICTUS. All Rights Reserved.</p>
+        <p class="organizer">Organized by <span class="highlight">ISTE-VESIT</span></p>
+        <div class="footer-socials">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="overlay-ui">
+      <div class="sound-control">AUDIO OFF</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
