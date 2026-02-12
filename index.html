@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/jpeg" href="/iste_logo.jpg" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invictus 2026</title>
+  <title>Avatar: The World of Pandora</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./src/style.css" />
@@ -19,12 +19,12 @@
   <!-- Top Navigation (Key Sections) -->
   <nav class="top-nav">
     <div class="logo">INVICTUS</div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <div class="nav-links" id="navLinks">
+    <div class="nav-links">
       <a href="#hero" class="nav-link">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#tracks" class="nav-link">Tracks</a>
@@ -32,7 +32,8 @@
       <a href="#prizepool" class="nav-link">Prizes</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#contact" class="nav-link">Contact</a>
-      <a href="https://forms.gle/fwwhvYYjtrw55ywX7" target="_blank" class="nav-link cta">Register</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScVJlkTE7L_cIc7LJUu2hWJRu0pS1vUKcOVhYNgWPigEPt20A/viewform"
+        target="_blank" rel="noopener noreferrer" class="nav-link cta">Register</a>
     </div>
   </nav>
 
@@ -54,9 +55,13 @@
     <main>
       <!-- 1. HERO - INVICTUS -->
       <section class="section hero" id="hero">
-        <img src="/Invictus_header.png" alt="INVICTUS" class="hero-logo">
+        <picture>
+          <source media="(max-width: 768px)" srcset="/mobile-invictus-header.png">
+          <img src="/Invictus_header.png" alt="INVICTUS" class="hero-logo">
+        </picture>
         <div class="content center">
-          <a href="https://forms.gle/fwwhvYYjtrw55ywX7" target="_blank"><button class="cta-btn" id="enter-btn">ENTER THE ARENA</button></a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScVJlkTE7L_cIc7LJUu2hWJRu0pS1vUKcOVhYNgWPigEPt20A/viewform"
+            target="_blank" rel="noopener noreferrer" class="cta-btn" id="enter-btn">ENTER THE ARENA</a>
         </div>
 
       </section>
@@ -106,7 +111,7 @@
 
           <div class="holo-footer">
             <div class="footer-line"></div>
-            <!-- <span class="system-msg">NEURAL LINK STABLE // DATA STREAM ACTIVE</span> -->
+            <span class="system-msg">NEURAL LINK STABLE // DATA STREAM ACTIVE</span>
           </div>
         </div>
       </section>
@@ -500,9 +505,10 @@
             <p><strong>Email:</strong> iste.vesit@ves.ac.in</p>
             <p><strong>Phone:</strong> +91 98765 43210</p>
             <div class="socials">
-              <a href="https://www.instagram.com/iste_vesit/" target="_blank">Instagram</a> |
-              <a href="https://www.linkedin.com/company/iste-vesit/" target="_blank">LinkedIn</a> |
-              <a href="https://x.com/iste_vesit" target="_blank">Twitter</a>
+              <a href="https://www.instagram.com/iste_vesit/" target="_blank" rel="noopener noreferrer">Instagram</a> |
+              <a href="https://www.linkedin.com/company/iste-vesit/" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a> | <a href="https://x.com/iste_vesit" target="_blank"
+                rel="noopener noreferrer">Twitter</a>
             </div>
           </div>
         </div>
@@ -513,7 +519,8 @@
         <div class="content center">
           <h2 class="subtitle">ARE YOU READY?</h2>
           <h1 class="title">JOIN THE BATTLE</h1>
-          <a href="https://forms.gle/fwwhvYYjtrw55ywX7" target="_blank"><button class="cta-btn primary">REGISTER NOW</button></a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScVJlkTE7L_cIc7LJUu2hWJRu0pS1vUKcOVhYNgWPigEPt20A/viewform"
+            target="_blank" rel="noopener noreferrer" class="cta-btn primary">REGISTER NOW</a>
         </div>
       </section>
     </main>
@@ -523,15 +530,15 @@
         <p class="copyright">© 2026 INVICTUS. All Rights Reserved.</p>
         <p class="organizer">Organized by <span class="highlight">ISTE-VESIT</span></p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/iste_vesit/" target="_blank">Instagram</a>
-          <a href="https://www.linkedin.com/company/iste-vesit/" target="_blank">LinkedIn</a>
-          <a href="https://x.com/iste_vesit" target="_blank">Twitter</a>
+          <a href="https://www.instagram.com/iste_vesit/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com/company/iste-vesit/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/iste_vesit" target="_blank" rel="noopener noreferrer">Twitter</a>
         </div>
       </div>
     </footer>
 
     <div class="overlay-ui">
-      <!-- <div class="sound-control">AUDIO OFF</div> -->
+      <div class="sound-control">AUDIO OFF</div>
     </div>
 
     <script type="module" src="/src/main.js"></script>

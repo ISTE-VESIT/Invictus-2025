@@ -100,6 +100,7 @@ strong {
   font-size: 0.9rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  text-decoration: none;
   color: var(--color-text);
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -911,19 +912,24 @@ body::after {
 }
 
 
-/* Hero Logo Image */
-.hero-logo {
+/* Hero Picture Container */
+.hero picture {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Hero Logo Image */
+.hero-logo {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  z-index: 0;
   filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.4));
-  pointer-events: none;
-  /* Let clicks pass through */
 }
 
 /* Ensure content sits on top */
@@ -2595,8 +2601,8 @@ body::after {
   }
 
   .hero-logo {
-    object-fit: contain;
-    object-position: top center;
+    object-fit: cover;
+    object-position: center;
   }
 
   .cta-btn {

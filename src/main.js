@@ -308,26 +308,7 @@ lenis.on('scroll', ScrollTrigger.update)
 gsap.ticker.add((time) => lenis.raf(time * 1000))
 gsap.ticker.lagSmoothing(0)
 
-// --- HAMBURGER MENU ---
-const hamburger = document.getElementById('hamburger')
-const navLinks = document.getElementById('navLinks')
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active')
-    navLinks.classList.toggle('active')
-  })
-
-  // Close menu when a nav link is clicked
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active')
-      navLinks.classList.remove('active')
-    })
-  })
-}
-
-// Navigation Click Handler (Smooth Scroll) — skip external links
+// Navigation Click Handler (Smooth Scroll)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault()
@@ -485,3 +466,21 @@ function updateCountdown() {
 // Start countdown when page loads
 updateCountdown();
 
+// --- HAMBURGER MENU TOGGLE ---
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburgerBtn && navLinks) {
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when a nav link is clicked
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+}
