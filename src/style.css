@@ -919,6 +919,7 @@ body::after {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  object-position: center;
   z-index: 0;
   filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.4));
   pointer-events: none;
@@ -2591,6 +2592,11 @@ body::after {
   /* Hero */
   .hero .content {
     padding-bottom: 15vh;
+  }
+
+  .hero-logo {
+    object-fit: contain;
+    object-position: top center;
   }
 
   .cta-btn {
