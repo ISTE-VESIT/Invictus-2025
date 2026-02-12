@@ -2646,8 +2646,21 @@ body::after {
   }
 
   /* Prize Pool */
+  .section.prizepool {
+    text-align: center !important;
+  }
+
+  .section.prizepool .content-wrapper {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+  }
+
   .prizes-container {
     gap: 1.5rem;
+    justify-content: center;
   }
 
   .biolume-text p:first-child {
