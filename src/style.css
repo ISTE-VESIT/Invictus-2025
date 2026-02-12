@@ -156,14 +156,6 @@ strong {
   position: relative;
 }
 
-.hero-logo {
-  max-width: 90%;
-  width: 600px;
-  height: auto;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.3));
-}
-
 .section {
   min-height: 100vh;
   display: flex;
@@ -286,7 +278,6 @@ body::after {
 }
 
 /* --- ENHANCED ABOUT US SECTION --- */
-/* --- YOUR EXISTING DESKTOP STYLES (Keep these exactly as they are) --- */
 
 .about-container {
   max-width: 1100px !important;
@@ -383,20 +374,19 @@ body::after {
 }
 
 .org-name {
-  color: var(--color-accent-green) !important; /* Assuming variable exists, else use #00ffaa */
+  color: var(--color-accent-green) !important;
   font-size: 1rem !important;
   letter-spacing: 0.1em;
   opacity: 0.8;
 }
 
 .drop-cap {
-  font-family: var(--font-heading); /* Fallback if var missing */
+  font-family: var(--font-heading);
   font-size: 2.5rem;
   color: var(--color-accent-blue);
   float: left;
-  line-height: 0.8;
-  padding-right: 1px;
-  margin-top: -5px;
+  line-height: 0.5;
+  padding-right: 0px;
 }
 
 /* Interactive Values */
@@ -413,18 +403,27 @@ body::after {
   color: var(--color-accent-green);
   border-radius: 4px;
   background: rgba(0, 255, 170, 0.05);
-  white-space: nowrap;
 }
 
 /* Animations */
 @keyframes scan-move {
-  0% { left: 0; }
-  100% { left: 100%; }
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 @keyframes rotate-ring {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .status-blink {
@@ -439,138 +438,21 @@ body::after {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* --- MISSING UTILITIES (Added to ensure layout works) --- */
-.holo-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  font-family: monospace;
-  color: var(--color-accent-blue);
-  font-size: 0.8rem;
-}
-.header-line, .footer-line {
-  flex-grow: 1;
-  height: 1px;
-  background: rgba(0, 240, 255, 0.3);
-  margin-left: 10px;
-}
-.holo-footer {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  font-family: monospace;
-  color: var(--color-accent-blue);
-  font-size: 0.7rem;
-}
-.system-msg { margin-left: 10px; }
-
-
-/* --- MOBILE OPTIMIZATION --- */
-/* This block ensures responsiveness while keeping desktop view intact */
-
-@media (max-width: 991px) {
-  .about-container {
-      padding: 3rem 2rem !important;
-  }
-  .section-title {
-      font-size: 2.2rem !important;
-      letter-spacing: 0.15em !important;
+  50% {
+    opacity: 0;
   }
 }
 
+/* Mobile optimization */
 @media (max-width: 768px) {
-  .about-container {
-    /* Reduce padding to fit small screens */
-    padding: 2rem 1.5rem !important; 
-    width: 95% !important; /* Ensure it doesn't touch screen edges */
-    margin: 1rem auto !important;
-  }
-
   .about-grid {
-    grid-template-columns: 1fr; /* Stack vertically */
-    gap: 3rem; /* Reduce gap between logo and text */
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  /* Adjust Logo Scaling */
-  .about-visual {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Scale down the logo slightly so rings don't overflow */
-  .logo-circle-wrap {
-    transform: scale(0.85); 
-  }
-
-  /* Typography Adjustments */
-  .section-title {
-    font-size: 1.8rem !important; /* Smaller title */
-    line-height: 1.2;
-    letter-spacing: 0.1em !important;
-    margin-top: 0.5rem !important;
-  }
-
-  .org-name {
-    font-size: 0.9rem !important;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  /* Fix Drop Cap on Mobile */
-  /* Because grid is centered, drop cap looks bad. 
-     We force the paragraph text back to left alignment or justify 
-     so the drop cap sits correctly. */
-  .desc-text {
-    text-align: left; 
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  /* Adjust Core Values to wrap nicely */
   .core-values {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
-  }
-
-  .value-item {
-    font-size: 0.7rem;
-    flex: 1 1 auto; /* Allows items to grow/shrink nicely */
-    max-width: 150px; /* Prevents them from getting too wide */
-  }
-
-  /* Header/Footer Elements */
-  .holo-header {
-      margin-bottom: 1rem;
-  }
-  
-  .coord-text {
-      font-size: 0.65rem; /* Smaller tech text */
-  }
-  
-  .system-msg {
-      font-size: 0.6rem;
-      text-align: right;
-  }
-}
-
-/* Extra Small Devices (375px and below) */
-@media (max-width: 400px) {
-  .section-title {
-      font-size: 1.5rem !important;
-  }
-  .logo-circle-wrap {
-      transform: scale(0.75); /* Shrink logo more */
-      margin-bottom: -20px; /* Reduce visual gap caused by scaling */
-  }
-  .about-container {
-      padding: 1.5rem 1rem !important;
   }
 }
 
@@ -677,8 +559,6 @@ body::after {
 @media (max-width: 768px) {
   .section {
     padding: 0 5%;
-    max-width: 100vw;
-    overflow-x: hidden;
   }
 
   .grid-layout {
@@ -689,15 +569,6 @@ body::after {
     text-align: center !important;
     border: none;
     padding: 2rem;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .content {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .right,
@@ -705,126 +576,6 @@ body::after {
   .center {
     border: none;
     margin: 0;
-    max-width: 100%;
-  }
-
-  /* Prevent horizontal overflow */
-  body {
-    overflow-x: hidden;
-  }
-
-  main {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
-  /* Hero Section Mobile */
-  .hero {
-    padding: 0 1rem;
-  }
-
-  .hero-logo {
-    max-width: 95%;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero .cta-btn {
-    padding: 0.8rem 2rem;
-    font-size: 0.8rem;
-  }
-
-  /* Mobile Navigation */
-  .top-nav {
-    padding: 1rem 1.5rem;
-  }
-
-  .top-nav .logo {
-    font-size: 1.2rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  .nav-link {
-    font-size: 0.75rem;
-  }
-
-  .nav-link.cta {
-    padding: 0.4rem 1rem;
-  }
-
-  /* Hide some nav links on very small screens */
-  .side-nav {
-    right: 1rem;
-    gap: 1rem;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .dot::before {
-    display: none;
-    /* Hide tooltips on mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .top-nav {
-    padding: 0.75rem 1rem;
-  }
-
-  .top-nav .logo {
-    font-size: 1rem;
-  }
-
-  .nav-links {
-    gap: 0.5rem;
-  }
-
-  .nav-link {
-    font-size: 0.65rem;
-  }
-
-  .nav-link:not(.cta) {
-    display: none;
-    /* Hide non-essential links on very small screens */
-  }
-
-  .side-nav {
-    right: 0.5rem;
-    gap: 0.75rem;
-  }
-
-  .dot {
-    width: 6px;
-    height: 6px;
-  }
-
-  /* Hero Section Small Mobile */
-  .hero-logo {
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .hero .cta-btn {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.7rem;
-  }
-
-  /* Ensure no horizontal scroll */
-  * {
-    max-width: 100vw;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
   }
 }
 
@@ -2614,125 +2365,6 @@ body::after {
   }
 }
 
-/* --- MOBILE RESPONSIVE OVERRIDES --- */
-
-@media (max-width: 991px) {
-  .prizepool {
-    padding: 60px 0;
-  }
-  
-  .prize-card.spirit-leaf {
-    /* Allow cards to shrink slightly on tablets */
-    min-width: 55%; 
-    padding: 2rem 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  /* 1. Layout & Spacing */
-  .prizepool {
-    padding: 4rem 1.5rem !important;
-    overflow: hidden; /* Safety net */
-  }
-
-  .pandora-title {
-    font-size: 2.5rem; /* clamp is good, but this locks it in */
-    line-height: 1.1;
-    margin-bottom: 2rem;
-  }
-
-  /* 2. Tab Switcher - Make it fit screen width */
-  .tab-switch-container {
-    width: 100%;
-    max-width: 350px; /* Prevent it getting too wide on phablets */
-    display: flex; /* Ensure flex behavior */
-    justify-content: space-between;
-    margin: 0 auto 2.5rem auto;
-  }
-
-  .tab-btn {
-    padding: 10px 0;
-    font-size: 0.9rem;
-    min-width: unset; /* Remove fixed width */
-    width: 50%; /* Split evenly */
-    flex: 1;
-  }
-
-  /* 3. Card Stacking */
-  .prizes-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .prize-card.spirit-leaf {
-    width: 100%;
-    min-width: unset !important; /* Override desktop min-width */
-    margin-bottom: 1rem;
-    padding: 2rem 1rem;
-    /* Reduce the dramatic leaf shape slightly for mobile so text fits better */
-    border-radius: 50px 50px 15px 15px; 
-  }
-
-  /* 4. Winner Card (Gold) Adjustments */
-  .prize-card.gold {
-    order: -1; /* Move to top */
-    transform: scale(1.05) !important; /* Slight scale, but less than desktop */
-    margin-bottom: 2rem;
-    background: rgba(20, 15, 0, 0.85); /* Darker background for readability */
-  }
-  
-  /* Disable/Reduce float animation on mobile to save battery/focus */
-  .prize-card {
-    animation: float 8s ease-in-out infinite !important; /* Slower */
-  }
-
-  /* 5. Typography Scaling */
-  .prize-card .amount {
-    font-size: 2.2rem;
-  }
-  
-  .prize-card .rank {
-    font-size: 1rem;
-  }
-  
-  .track-label {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-
-  /* 6. CRITICAL FIX: Footer Text */
-  /* Your desktop code had 'min-width: 800px' which forces horizontal scroll on mobile. */
-  .biolume-text p:first-child {
-    min-width: unset !important; /* Remove the hard lock */
-    width: 100%;
-    font-size: 1rem;
-    line-height: 1.4;
-    padding: 0 10px;
-  }
-  
-  .biolume-text p:last-child {
-    font-size: 0.9rem;
-  }
-  
-  .consolation.biolume-text {
-    margin-top: 2rem;
-    padding: 1rem 0;
-    width: 100%;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 380px) {
-  .pandora-title {
-    font-size: 2rem;
-  }
-  .prize-card .amount {
-    font-size: 1.8rem;
-  }
-  .tab-btn {
-    font-size: 0.8rem;
-  }
-}
 
 /* 7. CONTACT (formerly BALANCE) */
 .contact h2 {
