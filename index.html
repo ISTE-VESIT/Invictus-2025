@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/jpeg" href="/iste_logo.jpg" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invictus 2026</title>
+  <title>Avatar: The World of Pandora</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./src/style.css" />
@@ -111,7 +111,7 @@
 
           <div class="holo-footer">
             <div class="footer-line"></div>
-            <!-- <span class="system-msg">NEURAL LINK STABLE // DATA STREAM ACTIVE</span> -->
+            <span class="system-msg">NEURAL LINK STABLE // DATA STREAM ACTIVE</span>
           </div>
         </div>
       </section>
@@ -173,40 +173,52 @@
               <h3>Senior Track • Junior Track</h3>
               <p>Pick your track based on your year. Compete. Conquer.</p>
               <div class="tracks-details">
-                <div class="track-detail-card">
-                  <h4>Senior Track</h4>
+                <div class="track-detail-card clickable expanded" id="senior-track-card"
+                  onclick="toggleTrackCards('senior')">
+                  <h4>Senior Track <span class="track-expand-icon">▸</span></h4>
                   <p>TEs • BEs • MCA</p>
                 </div>
-                <div class="track-detail-card">
-                  <h4>Junior Track</h4>
+                <div class="track-detail-card clickable" id="junior-track-card" onclick="toggleTrackCards('junior')">
+                  <h4>Junior Track <span class="track-expand-icon">▸</span></h4>
                   <p>FEs • SEs</p>
                 </div>
               </div>
-              <!-- Countdown Timer for Problem Statement Release -->
-              <div class="countdown-container">
-                <div class="countdown-title">PROBLEM STATEMENTS RELEASE IN</div>
-                <div class="countdown-timer" id="countdown">
-                  <div class="time-unit">
-                    <div class="time-value" id="days">00</div>
-                    <div class="time-label">Days</div>
-                  </div>
-                  <div class="time-separator">:</div>
-                  <div class="time-unit">
-                    <div class="time-value" id="hours">00</div>
-                    <div class="time-label">Hours</div>
-                  </div>
-                  <div class="time-separator">:</div>
-                  <div class="time-unit">
-                    <div class="time-value" id="minutes">00</div>
-                    <div class="time-label">Minutes</div>
-                  </div>
-                  <div class="time-separator">:</div>
-                  <div class="time-unit">
-                    <div class="time-value" id="seconds">00</div>
-                    <div class="time-label">Seconds</div>
-                  </div>
+
+              <!-- Senior Track Sub-Cards -->
+              <div class="track-sub-cards visible" id="senior-sub-cards" style="max-height: 500px;">
+                <div class="track-sub-cards-inner">
+                  <a href="/senior_track/senior_track_ps1.pdf" target="_blank" rel="noopener noreferrer"
+                    class="track-ps-card">
+                    <div class="ps-icon">📄</div>
+                    <h5>PS 01</h5>
+                    <p>AstroView — Understanding Space Through Actionable Data</p>
+                    <span class="ps-download-tag">↓ Download PDF</span>
+                  </a>
+                  <a href="/senior_track/senior_track_ps2.pdf" target="_blank" rel="noopener noreferrer"
+                    class="track-ps-card">
+                    <div class="ps-icon">📄</div>
+                    <h5>PS 02</h5>
+                    <p>OpsAgent — Autonomous Operations Assistant for Small Businesses</p>
+                    <span class="ps-download-tag">↓ Download PDF</span>
+                  </a>
                 </div>
               </div>
+
+              <!-- Junior Track Sub-Cards -->
+              <div class="track-sub-cards" id="junior-sub-cards">
+                <div class="track-sub-cards-inner">
+                  <a href="/junior_track/junior_track_ps1.pdf" target="_blank" rel="noopener noreferrer"
+                    class="track-ps-card">
+                    <div class="ps-icon">📄</div>
+                    <h5>PS 01</h5>
+                    <p>Electrolyte Solution</p>
+                    <span class="ps-download-tag">↓ Download PDF</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Countdown Timer for Problem Statement Release -->
+
             </div>
           </div>
         </div>
@@ -485,8 +497,7 @@
           <p>Have questions? Reach out to us.</p>
           <div class="contact-info">
             <p><strong>Email:</strong> iste.vesit@ves.ac.in</p>
-            <p><strong>Aryamaan Patra</strong> — Managing Secretary | 7021965869</p>
-            <p><strong>Chaitanya Moharil</strong> — Junior Treasurer | 7058197525</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
             <div class="socials">
               <a href="https://www.instagram.com/iste_vesit/" target="_blank" rel="noopener noreferrer">Instagram</a> |
               <a href="https://www.linkedin.com/company/iste-vesit/" target="_blank"
@@ -521,7 +532,7 @@
     </footer>
 
     <div class="overlay-ui">
-      <!-- <div class="sound-control">AUDIO OFF</div> -->
+      <div class="sound-control">AUDIO OFF</div>
     </div>
 
     <script type="module" src="/src/main.js"></script>

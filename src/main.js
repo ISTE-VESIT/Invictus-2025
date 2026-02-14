@@ -424,10 +424,73 @@ window.switchTrack = function (e, track) {
   ScrollTrigger.refresh();
 };
 
+// --- TRACK CARDS EXPAND/COLLAPSE ---
+window.toggleTrackCards = function (track) {
+  const seniorCard = document.getElementById('senior-track-card');
+  const juniorCard = document.getElementById('junior-track-card');
+  const seniorSub = document.getElementById('senior-sub-cards');
+  const juniorSub = document.getElementById('junior-sub-cards');
+
+  if (track === 'senior') {
+    const isExpanded = seniorCard.classList.contains('expanded');
+
+    // Close junior if open
+    juniorCard.classList.remove('expanded');
+    juniorSub.classList.remove('visible');
+    juniorSub.style.maxHeight = '0';
+
+    if (isExpanded) {
+      // Collapse senior
+      seniorCard.classList.remove('expanded');
+      seniorSub.classList.remove('visible');
+      seniorSub.style.maxHeight = '0';
+    } else {
+      // Expand senior
+      seniorCard.classList.add('expanded');
+      seniorSub.classList.add('visible');
+      seniorSub.style.maxHeight = seniorSub.scrollHeight + 'px';
+
+      // GSAP entrance animation for PS cards
+      gsap.fromTo('#senior-sub-cards .track-ps-card',
+        { opacity: 0, y: 25, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.15, duration: 0.5, ease: 'power2.out', delay: 0.15 }
+      );
+    }
+  } else if (track === 'junior') {
+    const isExpanded = juniorCard.classList.contains('expanded');
+
+    // Close senior if open
+    seniorCard.classList.remove('expanded');
+    seniorSub.classList.remove('visible');
+    seniorSub.style.maxHeight = '0';
+
+    if (isExpanded) {
+      // Collapse junior
+      juniorCard.classList.remove('expanded');
+      juniorSub.classList.remove('visible');
+      juniorSub.style.maxHeight = '0';
+    } else {
+      // Expand junior
+      juniorCard.classList.add('expanded');
+      juniorSub.classList.add('visible');
+      juniorSub.style.maxHeight = juniorSub.scrollHeight + 'px';
+
+      // GSAP entrance animation for PS cards
+      gsap.fromTo('#junior-sub-cards .track-ps-card',
+        { opacity: 0, y: 25, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.15, duration: 0.5, ease: 'power2.out', delay: 0.15 }
+      );
+    }
+  }
+
+  // Refresh ScrollTrigger after layout changes
+  setTimeout(() => ScrollTrigger.refresh(), 700);
+};
+
 // --- COUNTDOWN TIMER TO FEBRUARY 14, 2026 ---
 function updateCountdown() {
   // Target date: February 14, 2026 at 9:00 AM IST
-  const targetDate = new Date('2026-02-14T16:00:00+05:30').getTime();
+  const targetDate = new Date('2026-02-14T09:00:00+05:30').getTime();
 
   function tick() {
     const now = new Date().getTime();
