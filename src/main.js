@@ -427,7 +427,7 @@ window.switchTrack = function (e, track) {
 // --- COUNTDOWN TIMER TO FEBRUARY 14, 2026 ---
 function updateCountdown() {
   // Target date: February 14, 2026 at 9:00 AM IST
-  const targetDate = new Date('2026-02-14T09:00:00+05:30').getTime();
+  const targetDate = new Date('2026-02-14T16:00:00+05:30').getTime();
 
   function tick() {
     const now = new Date().getTime();
